@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E1DB"
+    tools:context=".TestTicketPrice">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Modern App Header -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KSA World Cup 2034"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:textColor="#DE2D46"
+                android:textAlignment="center"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smart Ticketing &amp; Dynamic Pricing"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif"
+                android:textColor="#DE2D46"
+                android:textAlignment="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/currentDateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current Date: 25/03/2025"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Modern Card with Elevation and Rounded Corners -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Match Selection with Modern Styling -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select Match"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#DE2D46"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_marginBottom="16dp"
+                        app:boxStrokeColor="#9D2235"
+                        app:hintTextColor="#9D2235">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/matchSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Item 1"
+                            android:textColor="#333333"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Seat Category Selection with Modern Styling -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select Seat Category"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#DE2D46"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_marginBottom="16dp"
+                        app:boxStrokeColor="#9D2235"
+                        app:hintTextColor="#9D2235">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/seatCategorySpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:text="Item 1"
+                            android:textColor="#333333"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Date Selection with Modern Styling -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select Match Date"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#DE2D46"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_marginBottom="16dp"
+                        app:boxStrokeColor="#9D2235"
+                        app:hintTextColor="#9D2235"
+                        app:endIconMode="custom"
+                        app:endIconDrawable="@android:drawable/ic_menu_my_calendar"
+                        app:endIconTint="#DE2D46">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/selectedDateText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Select Date"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:textColor="#DE2D46"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Current Demand with Modern Styling -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current Demand (%) - (For illustration)"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#DE2D46"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/demandSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="0"
+                        android:valueTo="100"
+                        android:stepSize="5"
+                        android:value="50"
+                        app:labelBehavior="floating"
+                        app:thumbColor="#DE2D46"
+                        app:thumbElevation="4dp"
+                        app:trackColorActive="#DE2D46"
+                        app:trackColorInactive="#E0D5C9"
+                        android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Modern Button with Ripple Effect -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/calculateButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Calculate Dynamic Price"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="#DE2D46"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="12dp"
+                app:rippleColor="#FFFFFF"
+                android:elevation="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <ProgressBar
+                android:id="@+id/loadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:indeterminateTint="#9D2235"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/resultPriceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="#DE2D46"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Pay Now Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/payNowButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Pay Now"
+                android:onClick="processPayment"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="#009C3F"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="12dp"
+                app:rippleColor="#FFFFFF"
+                app:icon="@android:drawable/ic_menu_send"
+                app:iconGravity="textStart"
+                app:iconTint="#FFFFFF"
+                android:elevation="4dp"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Modern Ticket History Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ticket History"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#DE2D46"
+                android:textAlignment="center"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ticketsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="12dp"
+                    android:clipToPadding="false"/>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <include
+        android:id="@+id/bottom_navigation"
+        layout="@layout/bottom_nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".VRsMenue"
+android:background="#E4E1DB"
+android:padding="16dp">
+
+
+
+<LinearLayout
+    android:id="@+id/cardsContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!-- Modern Title with Improved Line Element -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/title_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/title_gradient_bachground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/title_gradient_bachground"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/page_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Virtual Reality Tours"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Improved divider line with gradient effect -->
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#E0D4D9" />
+
+            <TextView
+                android:id="@+id/page_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explore Saudi Arabia's Iconic Destinations"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 1 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/id110efe1777714be8afa29a5a5279df73"
+        app:cardCornerRadius="12dp"
+        android:clickable="true"
+        android:onClick="navigateToVR_ShowActivity"
+        android:focusable="true"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_container"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Mountain view"
+                android:src="@drawable/stadium_img" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#DE2D46"
+                android:text="Al-Saudia Stadium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:text="Experience the electrifying atmosphere of Al-Saudia Stadium! Explore its state-of-the-art facilities and immerse yourself in the heart of the action with our interactive VR tour." />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 2 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/id107e8aa805874184b72852db345ec13f"
+        app:cardCornerRadius="12dp"
+        android:onClick="navigateToVR_ShowActivity"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Beach sunset"
+                android:src="@drawable/riyadh_park_image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#DE2D46"
+                android:text="Riyadh Park Mall" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:text="Step into the ultimate shopping and entertainment destination! Discover the vibrant ambiance of Riyadh Park Mall through an immersive VR experience." />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 3 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/ida7f0ed17e9b2461a9b377383205ba960"
+        app:cardCornerRadius="12dp"
+        android:onClick="navigateToVR_ShowActivity"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="City skyline"
+                android:src="@drawable/king_salman_park" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#DE2D46"
+                android:text="King Salman Park" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:text="Explore the breathtaking greenery and modern attractions of King Salman Park. Take a virtual journey through this urban oasis and experience its beauty firsthand." />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Card 4 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/ida5220988a10c4b938d60048608d48fb3"
+        app:cardCornerRadius="12dp"
+        android:onClick="navigateToVR_ShowActivity"
+        app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="City skyline"
+            android:src="@drawable/under_ground_parking_image" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#DE2D46"
+            android:text="Al-Saudia Stadium Parking Zone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:text="Navigate the spacious and well-organized parking facility at Al-Saudia Stadium. Explore designated zones, entry points, and exits for a seamless parking experience with our VR tour." />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+</LinearLayout>
+</ScrollView>

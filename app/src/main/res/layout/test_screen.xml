@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#E2DFD9"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <!-- TextView for Greeting -->
+    <ImageView
+        android:layout_width="282dp"
+        android:layout_height="203dp"
+        android:layout_gravity="center"
+        android:src="@drawable/saud_robot" />
+
+    <!-- GridLayout to hold CardViews -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        app:columnCount="2"
+        app:rowCount="3">
+
+        <!-- First Card - Weather -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <!-- Horizontal LinearLayout to position Image and Text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <!-- Image/Icon -->
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="top"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Weather Icon"
+                    android:src="@drawable/weather_icon" />
+
+                <!-- Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is the weather like today?"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="#DE2D46"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Second Card - Local Attractions -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <!-- Image/Icon -->
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="top"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Weather Icon"
+                    android:src="@drawable/attraction_icon" />
+
+                <!-- Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommend me some local attractions"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="#DE2D46"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Third Card - Best Restaurant -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="@color/white"
+            app:cardElevation="4dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <!-- Image/Icon -->
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="top"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Weather Icon"
+                    android:src="@drawable/baseline_restaurant_menu_24" />
+
+                <!-- Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is the best Restaurant?"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="#DE2D46"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fourth Card - Activities -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <!-- Image/Icon -->
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="top"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Weather Icon"
+                    android:src="@drawable/baseline_snowboarding_24" />
+
+                <!-- Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommend me some activities"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="#DE2D46"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</LinearLayout>

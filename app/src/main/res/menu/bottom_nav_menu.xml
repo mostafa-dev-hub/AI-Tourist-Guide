@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_tick"
+        android:icon="@drawable/tickit_icon"
+        android:title="Tickets" />
+
+    <item
+        android:id="@+id/nav_saud"
+        android:icon="@drawable/bot_icon"
+        android:title="Saud_Chat" />
+    <item
+        android:id="@+id/nav_vr"
+        android:icon="@drawable/vr_icon"
+        android:title="VR" />
+</menu>

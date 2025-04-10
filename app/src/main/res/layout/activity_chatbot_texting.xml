@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:hardwareAccelerated="true"
+    tools:context=".ChatbotTexting">
+
+    <!-- Persistent Header that remains visible during chat -->
+    <RelativeLayout
+        android:id="@+id/persistent_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="12dp"
+        android:layout_margin="0dp">
+
+        <ImageView
+            android:id="@+id/header_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/saud_robot" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/header_logo"
+            android:text="Chat with Saud"
+            android:textColor="#DE2D46"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <include
+        android:id="@+id/bottom_navigation"
+        layout="@layout/bottom_nav_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <!-- Message Input Area - Now above bottom navigation -->
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="8dp"
+        android:layout_above="@id/bottom_navigation">
+
+        <EditText
+            android:id="@+id/message_edit_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/recordBtn"
+            android:background="@drawable/rounded_corner"
+            android:hint="Ask Saud anything"
+            android:padding="16dp" />
+
+        <ImageButton
+            android:id="@+id/recordBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_toLeftOf="@id/send_bottom2"
+            android:background="@drawable/circular_button_background"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/voice_icon" />
+
+        <ImageButton
+            android:id="@+id/send_bottom2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circular_button_background"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/baseline_send_24" />
+    </RelativeLayout>
+
+    <!-- RecyclerView for chat messages - Between header and input area -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@id/persistent_header" />
+
+    <!-- Suggested Messages - On top of RecyclerView -->
+    <LinearLayout
+        android:id="@+id/suggested_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/persistent_header"
+        android:layout_above="@id/bottom_layout"
+
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Robot Image -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:src="@drawable/saud_robot" />
+
+        <!-- Using ConstraintLayout for more consistent card display -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cards_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <!-- First Card - Weather -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/weather_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/attractions_card"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Weather Icon"
+                        android:src="@drawable/weather_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What is the weather like today?"
+                        android:textSize="14sp"
+                        android:onClick="sendRecommendedMessages"
+                        android:textStyle="bold"
+                        android:textColor="#DE2D46"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Second Card - Local Attractions -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/attractions_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toEndOf="@id/weather_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Attractions Icon"
+                        android:src="@drawable/attraction_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recommend me some local attractions"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:onClick="sendRecommendedMessages"
+                        android:textColor="#DE2D46"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Third Card - Best Restaurant -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/restaurant_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/activities_card"
+                app:layout_constraintTop_toBottomOf="@id/weather_card"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Restaurant Icon"
+                        android:src="@drawable/baseline_restaurant_menu_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What is the best Restaurant?"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:onClick="sendRecommendedMessages"
+                        android:textColor="#DE2D46"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Fourth Card - Activities -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activities_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:layout_constraintStart_toEndOf="@id/restaurant_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/attractions_card"
+                app:layout_constraintWidth_percent="0.45">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:contentDescription="Activities Icon"
+                        android:src="@drawable/baseline_snowboarding_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recommend me some activities"
+                        android:textSize="14sp"
+                        android:onClick="sendRecommendedMessages"
+                        android:textStyle="bold"
+                        android:textColor="#DE2D46"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</RelativeLayout>
