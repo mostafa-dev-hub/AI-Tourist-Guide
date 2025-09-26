@@ -1,4 +1,4 @@
-# AI Tourist Guide – Saudi Arabia 2034
+# KooraAI
 
 ## Overview
 The **Smart World Cup Companion App** is an AI-powered mobile application designed to enhance the experience of international visitors during the **2034 FIFA World Cup in Saudi Arabia**.  
